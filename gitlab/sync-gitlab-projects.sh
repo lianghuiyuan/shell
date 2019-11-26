@@ -5,7 +5,6 @@
 # Documentation
 # https://docs.gitlab.com/ce/api/projects.html#list-projects
 
-#NAMESPACE="lateinos"
 NAMESPACE="study"
 BASE_PATH="https://gitlab.xxxx.net/"
 PROJECT_SEARCH_PARAM=""

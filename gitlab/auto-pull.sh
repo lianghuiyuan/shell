@@ -19,6 +19,6 @@ function getdir(){
         fi
     done
 }
-root_dir="/home/creasy/work/authine/src"
+root_dir="/home/creasy/work/src"
 getdir $root_dir
 
