@@ -25,7 +25,8 @@ curl -s "${BASE_PATH}api/v4/projects?private_token=$GITLAB_PRIVATE_TOKEN&search=
     | jq --raw-output --compact-output ".[] | $PROJECT_SELECTION | $PROJECT_PROJECTION" > "$FILENAME"
 
 # for debug
-# curl -s "https://git.example.com/api/v4/projects?private_token=xxxxxxx" |jq --raw-output --compact-output ".[]|select(.namespace.name == \"live\")|{ \"path\": .path, \"git\": .http_url_to_repo}" > tmp
+# curl -s "https://git.example.com/api/v4/projects?private_token=xxxxxxx?per_page=999" |jq --raw-output --compact-output ".[]|select(.namespace.name == \"live\")|{ \"path\": .path, \"git\": .http_url_to_repo}" > tmp
+# curl -vvv --header "PRIVATE-TOKEN: Qynb-s_kiSKcdrYLDszy" "http://git.example.com/api/v4/projects?per_page=999" |jq --raw-output --compact-output ".[]|{ \"namespace\": .name_with_namespace, \"git\": .http_url_to_repo}"
 while read repo; do
     THEPATH=$(echo "$repo" | jq -r ".path")
     GIT=$(echo "$repo" | jq -r ".git")
